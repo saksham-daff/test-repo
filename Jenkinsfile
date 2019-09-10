@@ -15,9 +15,9 @@ pipeline {
                 sh 'echo "Awesome"'
                 sh '''
                     echo "Multiline shell steps works too"
-                    lets do somethings....
+                    lets do somethings...."
                 '''
-				sh 'echo "Fail!"'
+		    sh 'Fail!!!;exit 1'
             }
         }
 	}
