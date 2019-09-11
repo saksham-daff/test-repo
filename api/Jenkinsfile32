@@ -1,13 +1,13 @@
 pipeline {
     agent any
+    environment {
+	PATH = "/opt/android-sdk/tools:/opt/android-sdk/platform-tools:${PATH}:/usr/sbin:/sbin:/opt/aws/bin:/var/lib/jenkins/.rvm/bin:/var/lib/jenkins/.rvm/bin:/usr/local/bin/ecs-cli:/usr/bin/aws"
+    }
     stages {
         stage('Build') {
             steps {
                 sh 'echo "Jenkins File Inside folder"'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
+                printenv
             }
         }
 	
@@ -15,7 +15,7 @@ pipeline {
 	post {
         always {
             echo 'This will always run'
-	    emailext body: 'Sent using Jenkinsfile2 inside folder😎', subject: 'Jenkinsfile pipeline testmail', to: 'saksham.gupta@daffodilsw.com'
+	    #emailext body: 'Sent using Jenkinsfile2 inside folder😎', subject: 'Jenkinsfile pipeline testmail', to: 'saksham.gupta@daffodilsw.com'
         }
         success {
             echo 'This will run only if successful'
