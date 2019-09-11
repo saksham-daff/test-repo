@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Jenkins File Inside folder"'
-                printenv
+                sh 'printenv'
             }
         }
 	
