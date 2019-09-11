@@ -14,13 +14,13 @@ pipeline {
 	}
     post {
         always {
-            emailext body: '${DEFAULT_CONTENT}', postsendScript: '${DEFAULT_POSTSEND_SCRIPT}', presendScript: '${DEFAULT_PRESEND_SCRIPT}', subject: '${DEFAULT_SUBJECT}', to: 'saksham@digitalmettle.com'
+            echo 'This will run only if the run was mar'
         }
         success {
-            echo 'This will run only if successful'
+            emailext body: '${DEFAULT_CONTENT}', postsendScript: '${DEFAULT_POSTSEND_SCRIPT}', from: 'saksham', presendScript: '${DEFAULT_PRESEND_SCRIPT}', replyTo: '${PROJECT_DEFAULT_REPLYTO}', subject: '${DEFAULT_SUBJECT}', to: 'saksham.gupta@daffodilsw.com'
         }
         failure {
-            echo 'This will run only if failed'
+            mail bcc: '', body: '${DEFAULT_CONTENT}', cc: '', from: 'saksham', replyTo: '${PROJECT_DEFAULT_REPLYTO}', subject: '${DEFAULT_SUBJECT}', to: 'saksham.gupta@daffodilsw.com, '
         }
         unstable {
             echo 'This will run only if the run was marked as unstable'
