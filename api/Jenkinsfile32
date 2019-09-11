@@ -12,9 +12,9 @@ pipeline {
         }
 	
 	}
-	post {
+    post {
         always {
-            echo 'This will always run'
+            emailext body: '${DEFAULT_CONTENT}', postsendScript: '${DEFAULT_POSTSEND_SCRIPT}', presendScript: '${DEFAULT_PRESEND_SCRIPT}', subject: '${DEFAULT_SUBJECT}', to: 'saksham@digitalmettle.com'
         }
         success {
             echo 'This will run only if successful'
