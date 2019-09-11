@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Jenkins File Inside folder"'
-                sh 'echo "${PATH}"'
+                sh 'echo "${PATH}"; exit 1'
             }
         }
 	
