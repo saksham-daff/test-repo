@@ -15,7 +15,6 @@ pipeline {
 	post {
         always {
             echo 'This will always run'
-	    #emailext body: 'Sent using Jenkinsfile2 inside folder😎', subject: 'Jenkinsfile pipeline testmail', to: 'saksham.gupta@daffodilsw.com'
         }
         success {
             echo 'This will run only if successful'
