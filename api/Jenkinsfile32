@@ -20,7 +20,7 @@ pipeline {
             emailext body: '${DEFAULT_CONTENT}', postsendScript: '${DEFAULT_POSTSEND_SCRIPT}', from: 'saksham', presendScript: '${DEFAULT_PRESEND_SCRIPT}', replyTo: '${PROJECT_DEFAULT_REPLYTO}', subject: '${DEFAULT_SUBJECT}', to: 'saksham.gupta@daffodilsw.com'
         }
         failure {
-            mail bcc: '', body: '${DEFAULT_CONTENT}', cc: '', from: 'saksham', replyTo: '${PROJECT_DEFAULT_REPLYTO}', subject: '${DEFAULT_SUBJECT}', to: 'saksham.gupta@daffodilsw.com, '
+            mail bcc: '', body: '${DEFAULT_CONTENT}', cc: '', from: 'saksham', replyTo: '${PROJECT_DEFAULT_REPLYTO}', subject: '${DEFAULT_SUBJECT}', to: 'saksham.gupta@daffodilsw.com, shashank.g@daffodilsw.com '
         }
         unstable {
             echo 'This will run only if the run was marked as unstable'
