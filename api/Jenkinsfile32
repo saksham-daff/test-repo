@@ -14,7 +14,7 @@ pipeline {
 	}
     post {
         always {
-            emailext body: '${DEFAULT_CONTENT}', postsendScript: '${DEFAULT_POSTSEND_SCRIPT}', from: 'saksham', presendScript: '${DEFAULT_PRESEND_SCRIPT}', replyTo: '${PROJECT_DEFAULT_REPLYTO}', subject: '${DEFAULT_SUBJECT}', to: 'saksham.gupta@daffodilsw.com, shahshank.g@daffodilsw.com'
+            emailext body: '${DEFAULT_CONTENT}', postsendScript: '${DEFAULT_POSTSEND_SCRIPT}', from: 'saksham', presendScript: '${DEFAULT_PRESEND_SCRIPT}', replyTo: '${PROJECT_DEFAULT_REPLYTO}', subject: '${DEFAULT_SUBJECT}', to: 'saksham.gupta@daffodilsw.com, shashank.g@daffodilsw.com'
         }
         success {
             echo 'This will run only if the run success'
